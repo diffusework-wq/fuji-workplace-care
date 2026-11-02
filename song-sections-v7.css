@@ -78,3 +78,9 @@
 @media(max-width:760px){.hero h1{font-size:clamp(36px,8.8vw,52px);margin-top:28px}.pilot-example{grid-template-columns:1fr;gap:30px;margin-top:40px;padding-top:32px}.pilot-example h3{font-size:25px}.pilot-numbers dd{font-size:38px}.arrangement-list>div{grid-template-columns:1fr;gap:18px;padding:26px 0}.arrangement-list dt{font-size:23px}.field-row{gap:14px}.plan-tool label .optional{margin-left:4px}.procurement-options summary{font-size:13px}}
 
 @media(max-width:760px){.hero-lead br,.hero-description br,.section-heading>p br,.craft-intro br{display:none}.treatment-description,.arrangement-list dd,.craft-intro,.continuity-terms p{font-size:16px;line-height:1.85}.treatment-description{min-height:0}.section-label{margin-bottom:28px}.brand-en{letter-spacing:.14em}.field-row{grid-template-columns:1fr}.hero-bottom{flex-wrap:wrap;gap:8px}}
+/* Keep navigation in normal flow, then pinned while scrolling. */
+:root{--header-height:108px}
+html{scroll-padding-top:calc(var(--header-height) + 20px)}
+.site-header{position:sticky;top:0;background:var(--paper);z-index:50;box-shadow:0 1px 0 rgba(48,33,22,.1)}
+@media(max-width:760px){:root{--header-height:86px}.site-header nav{max-height:calc(100dvh - var(--header-height));overflow-y:auto;overscroll-behavior:contain}}
+@media print{.site-header{position:static;box-shadow:none}}

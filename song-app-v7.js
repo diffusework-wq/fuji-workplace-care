@@ -73,3 +73,9 @@ $('edit-plan').addEventListener('click',()=>{showForm();$('company').focus({prev
 $('copy-brief').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('brief').value);$('action-status').textContent='需求單已複製，尚未傳送給任何服務窗口。';}catch{const brief=$('brief');brief.focus();brief.select();$('action-status').textContent='請使用 Ctrl+C（或 ⌘C）複製已選取的需求單。';}});
 $('download-brief').addEventListener('click',()=>{const blob=new Blob(['\uFEFF'+$('brief').value],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='松檜-企業合作需求單.txt';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);$('action-status').textContent='需求單已提供下載；尚未送出或成立預約。';});
 updateSelection();
+const pinnedHeader=document.querySelector('.site-header');
+if(pinnedHeader && 'ResizeObserver' in window){
+ const syncHeaderHeight=()=>document.documentElement.style.setProperty('--header-height',pinnedHeader.getBoundingClientRect().height+'px');
+ new ResizeObserver(syncHeaderHeight).observe(pinnedHeader);
+ syncHeaderHeight();
+}
