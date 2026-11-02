@@ -84,3 +84,13 @@ html{scroll-padding-top:calc(var(--header-height) + 20px)}
 .site-header{position:sticky;top:0;background:var(--paper);z-index:50;box-shadow:0 1px 0 rgba(48,33,22,.1)}
 @media(max-width:760px){:root{--header-height:86px}.site-header nav{max-height:calc(100dvh - var(--header-height));overflow-y:auto;overscroll-behavior:contain}}
 @media print{.site-header{position:static;box-shadow:none}}
+
+/* Song Kuai botanical identity: original engraved pine, quiet brass on paper. */
+.pine-signature{position:absolute;z-index:4;right:calc(45% - 60px);bottom:88px;width:132px;height:156px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid #9c805c;border-radius:70px 70px 5px 5px;background:var(--cocoa);pointer-events:none}
+.pine-signature:before{content:"";position:absolute;inset:6px;border:1px solid #766044;border-radius:64px 64px 2px 2px}
+.pine-signature img{width:114px;height:80px;object-fit:contain;position:relative}
+.pine-signature span{font:8px Georgia,serif;letter-spacing:.22em;color:#d3bea1;margin-top:8px;position:relative}
+.craft-copy{position:relative;overflow:hidden}.pine-craft{width:155px;height:93px;object-fit:contain;margin:0 0 24px;opacity:.9}
+.pine-footer{display:flex;align-items:center;justify-content:center;gap:32px;margin:0 auto 40px;max-width:520px}.pine-footer img{width:152px;height:92px;object-fit:contain}.pine-footer>span{height:1px;background:#66523e;flex:1}
+@media(max-width:1100px){.pine-signature{width:108px;height:130px;right:calc(45% - 42px);bottom:78px}.pine-signature img{width:94px;height:65px}}
+@media(max-width:760px){.pine-signature{right:9%;bottom:58px;width:88px;height:106px}.pine-signature img{width:77px;height:53px}.pine-signature span{font-size:6px;letter-spacing:.15em;margin-top:5px}.pine-craft{width:124px;height:74px;margin-bottom:20px}.pine-footer{margin-bottom:28px;gap:20px;max-width:300px}.pine-footer img{width:120px;height:72px}}
